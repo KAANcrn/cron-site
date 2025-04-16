@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Cron Test Sayfası</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron - Gaming Vibe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      position: relative;
+      color: #fff;
+    }
+
+    h1::before,
+    h1::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      background: none;
+      overflow: hidden;
+    }
+
+    h1::before {
+      left: 2px;
+      text-shadow: -2px 0 red;
+      animation: glitch 2s infinite linear alternate-reverse;
+    }
+
+    h1::after {
+      left: -2px;
+      text-shadow: -2px 0 blue;
+      animation: glitch 1.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0% {
+        clip: rect(44px, 9999px, 56px, 0);
+      }
+      10% {
+        clip: rect(12px, 9999px, 34px, 0);
+      }
+      20% {
+        clip: rect(77px, 9999px, 86px, 0);
+      }
+      30% {
+        clip: rect(22px, 9999px, 45px, 0);
+      }
+      40% {
+        clip: rect(33px, 9999px, 52px, 0);
+      }
+      50% {
+        clip: rect(15px, 9999px, 70px, 0);
+      }
+      60% {
+        clip: rect(66px, 9999px, 80px, 0);
+      }
+      70% {
+        clip: rect(44px, 9999px, 58px, 0);
+      }
+      80% {
+        clip: rect(11px, 9999px, 39px, 0);
+      }
+      90% {
+        clip: rect(22px, 9999px, 62px, 0);
+      }
+      100% {
+        clip: rect(66px, 9999px, 89px, 0);
+      }
+    }
+
+    .neon-btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      border: none;
+      background: linear-gradient(270deg, #ff00cc, #3333ff);
+      background-size: 400% 400%;
+      animation: rgbFlow 8s ease infinite;
+      color: white;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .neon-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes rgbFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
 </head>
-<body style="background-color: black; color: lime; font-family: sans-serif; text-align: center; margin-top: 20%;">
-  <h1>🚀 Cron Web Sitesi Yayında!</h1>
-  <p>Bu, test amaçlı çalışır HTML sayfasıdır.</p>
+<body>
+  <h1 data-text="Cron Gaming">Cron Gaming</h1>
+  <button class="neon-btn">Başla</button>
 </body>
 </html>
